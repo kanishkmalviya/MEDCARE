@@ -1,0 +1,114 @@
+/* Mobile Styles - Add this to your main CSS or include as a separate file */
+
+/* Mobile Menu Styles */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+    
+    .navbar .container {
+        flex-wrap: wrap;
+        position: relative;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease;
+        gap: 0;
+    }
+    
+    .nav-links.active {
+        max-height: 300px;
+    }
+    
+    .nav-links a {
+        padding: 15px 0;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .nav-actions {
+        width: 100%;
+        justify-content: center;
+        margin-top: 15px;
+    }
+}
+
+/* Responsive Features Grid */
+@media (max-width: 768px) {
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-card {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+/* Navigation Scrolled Effect */
+.navbar.scrolled {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px 0;
+}
+
+/* Animation for elements on scroll */
+.feature-card, .about-content, .about-image, .mission-content, .mission-image {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.feature-card.animated, .about-content.animated, .about-image.animated, 
+.mission-content.animated, .mission-image.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive CTA Section */
+@media (max-width: 576px) {
+    .cta {
+        padding: 60px 0;
+    }
+    
+    .cta h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta p {
+        font-size: 1rem;
+    }
+}
+
+/* Footer Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        text-align: center;
+    }
+    
+    .footer-logo {
+        justify-content: center;
+    }
+    
+    .footer-column h3:after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
